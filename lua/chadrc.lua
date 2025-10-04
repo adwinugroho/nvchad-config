@@ -7,31 +7,30 @@ local options = {
     integrations = {},
     changed_themes = {},
     transparency = false,
-    theme_toggle = { "chadracula", "one_light" },
+    theme_toggle = { "chadracula" },
   },
 
   ui = {
     cmp = {
       icons_left = false, -- only for non-atom styles!
-      style = "default", -- default/flat_light/flat_dark/atom/atom_colored
+      style = "chadracula", -- default/flat_light/flat_dark/atom/atom_colored
       abbr_maxwidth = 60,
       format_colors = {
-        tailwind = false, -- will work for css lsp too
+        tailwind = true, -- will work for css lsp too
         icon = "󱓻",
       },
     },
 
     telescope = { style = "borderless" }, -- borderless / bordered
 
-    statusline = {
-      enabled = true,
-      theme = "default", -- default/vscode/vscode_colored/minimal
-      -- default/round/block/arrow separators work only for default statusline theme
-      -- round and block will work for minimal theme only
-      separator_style = "default",
-      order = nil,
-      modules = nil,
-    },
+  statusline = {
+    enabled = true,
+    theme = "default", -- atau "minimal" / "vscode" / "vscode_colored"
+    separator_style = "default", -- pilih: "default" / "round" / "block" / "arrow"
+    order = nil,
+    modules = nil,
+  },
+
 
     -- lazyload it when there are 1+ buffers
     tabufline = {
@@ -109,7 +108,7 @@ local options = {
     enabled = true,
     mode = "virtual", -- fg, bg, virtual
     virt_text = "󱓻 ",
-    highlight = { hex = true, lspvars = true },
+    highlight = { hex = true, lspvars = false },
   },
 }
 
